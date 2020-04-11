@@ -1,0 +1,33 @@
+{
+	"auth": {
+		"amplifyandroid7a8d112e": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": []
+		}
+	},
+	"function": {
+		"syncConflictHandlerf16ea688": {
+			"service": "Lambda",
+			"providerPlugin": "awscloudformation",
+			"build": true
+		}
+	},
+	"api": {
+		"amplifyandroid": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"authConfig": {
+					"additionalAuthenticationProviders": [],
+					"defaultAuthentication": {
+						"authenticationType": "AMAZON_COGNITO_USER_POOLS",
+						"userPoolConfig": {
+							"userPoolId": "authamplifyandroid7a8d112e"
+						}
+					}
+				}
+			}
+		}
+	}
+}
